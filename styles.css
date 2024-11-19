@@ -2,31 +2,124 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
 }
 
 :root {
     --primary-color: white;
-    --secondary-color: #0077b6;
+    --secondary-color: #1992D4;
     --header-color: black;
-    --paragraph-color: #808080;
-    --background-color: whitesmoke;
+    --paragraph-color: #636363;
+    --background-color: #E2E8F0;
+    --border-color: #F0B429;
+    --margin-size: .5rem 1.5rem;
+    --border-radius: 1rem;
+}
+
+img {
+    width: 1.5rem;
+    height: auto;
 }
 
 html, body {
     height: 100vh;
     min-width: 100vw;
     display: grid;
-    grid-template: 1fr 5fr / 1fr 5fr 1fr;
+    grid-template: 1fr 6fr / 1fr 4fr 1fr;
 }
 
 header {
     grid-area: 1 / 2 / 2 / -1;
     background-color: var(--primary-color);
+    box-shadow: 5px 5px 4px black;
+}
+
+header > div {
+    display: grid;
+    grid-template: 1fr / 2fr 1fr;
+    padding: 10px 20px;
+    margin: var(--margin-size);
+}
+
+#search-bar {
+    width: clamp(200px, 90%, 800px);
+    padding: 6px 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header button {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: none;
+    background-color: var(--secondary-color);
+    border-radius: 30px;
+    padding: var(--margin-size);
+}
+
+.header-small-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header p {
+    font-size: .85rem;
+    font-weight: bold;
 }
 
 nav {
     grid-area: 1 / 1 / -1 / 2;
     background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--primary-color);
+}
+
+nav * {
+    font-weight: 600;
+}
+
+nav > * {
+    margin: var(--margin-size);
+    padding: 4px;
+}
+
+nav div,
+nav li {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+img[alt="dashboard"] {
+    width: 3rem;
+}
+
+nav div {
+    margin-left: .8rem;
+    gap: 0.5rem;
+}
+
+nav li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}  
+
+nav img {
+    filter: invert(100%);
 }
 
 main {
