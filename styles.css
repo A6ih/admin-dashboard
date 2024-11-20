@@ -244,6 +244,7 @@ aside > * {
     border-radius: var(--border-radius);
     display: grid;
     gap: 1.5rem;
+    margin-bottom: 50px;
 }
 
 .trending-cards {
