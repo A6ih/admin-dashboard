@@ -81,6 +81,7 @@ header > div {
     gap: 1rem;
 }
 
+
 header button {
     color: var(--primary-color);
     font-weight: bold;
@@ -94,10 +95,12 @@ header button {
 .header-small-container {
     display: flex;
     align-items: center;
+    justify-self: end;
     gap: 2rem;
 }
 
-h3 {
+h3,
+h2 {
     font-weight: 500;
 }
 
