@@ -36,7 +36,7 @@ html, body {
     height: 100vh;
     min-width: 100vw;
     display: grid;
-    grid-template: 1fr 6fr / 1fr 4fr 1fr;
+    grid-template: 1fr 6fr / 1fr 3fr 1fr;
 }
 
 header {
@@ -202,24 +202,23 @@ aside h3 {
 }
 
 aside {
+    --border-radius: .5rem;
     grid-area: 2 / 3 / -1 / -1;
     background-color: var(--background-color);
 }
 
 aside > * {
     margin-left: 1.5rem;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
 }
 
 .announcement-cards p {
     font-size: 0.7rem;
-    width: 28ch;
     line-height: normal;
 }
 
 #announcement-container {
     --margin-size: 1rem 2rem;
-    --border-radius: .5rem;
     background-color: var(--primary-color);
     margin-top: .5rem;
     padding: var(--margin-size);
@@ -236,4 +235,24 @@ aside > * {
 
 .announcement-cards h5 {
     font-weight: 500;
+}
+
+#trending-container {
+    background-color: var(--primary-color);
+    margin-top: .5rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: grid;
+    gap: 1.5rem;
+}
+
+.trending-cards {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.user-tag {
+    color: black;
 }
