@@ -6,6 +6,7 @@
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
+    box-sizing: border-box;
 }
 
 :root {
@@ -17,11 +18,18 @@
     --border-color: #F0B429;
     --margin-size: .5rem 1.5rem;
     --border-radius: 1rem;
+    --box-shadow: 2px 4px 3px #CBD0D8;
 }
 
 img {
     width: 1.5rem;
     height: auto;
+}
+
+img[alt="profile picture"] {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
 }
 
 html, body {
@@ -34,7 +42,8 @@ html, body {
 header {
     grid-area: 1 / 2 / 2 / -1;
     background-color: var(--primary-color);
-    box-shadow: 5px 5px 4px black;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 4px;
 }
 
 header > div {
@@ -46,15 +55,29 @@ header > div {
 
 #search-bar {
     width: clamp(200px, 90%, 800px);
-    padding: 6px 12px;
+    padding: 4px 12px;
     border: none;
     border-radius: var(--border-radius);
     background-color: var(--background-color);
 }
 
+#search-bar:focus {
+    outline: 2px solid var(--secondary-color);
+}
+
 #search-container {
     display: flex;
     align-items: center;
+    gap: 1rem;
+}
+
+#main-picture {
+    width: 4rem;
+    height: 4rem;
+}
+
+#greeting-container {
+    display: flex;
     gap: 1rem;
 }
 
@@ -70,8 +93,12 @@ header button {
 
 .header-small-container {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    gap: 2rem;
+}
+
+h3 {
+    font-weight: 500;
 }
 
 header p {
@@ -125,9 +152,88 @@ nav img {
 main {
     grid-area: 2 / 2 / -1 / 3;
     background-color: var(--background-color);
+    display: grid;
+    grid-template-rows: min-content;
+    padding-left: 1.5rem;
+    gap: .5rem;
+}
+
+main > *,
+aside > * {
+    margin-top: 1.5rem;
+}
+
+.cards {
+    --border-radius: .5rem;
+    background-color: var(--primary-color);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 8px solid var(--border-color);
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}
+
+#project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1.8rem 1.5rem;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+main p,
+aside p {
+    color: var(--paragraph-color);
+    line-height: 1.3;
+}
+
+main h3,
+aside h3 {
+    font-weight: 500;
+}
+
+.project-icons {
+    justify-self: end;
+    display: flex;
+    gap: 1.5rem;
+    filter:invert(20%);
+    margin-top: 1rem;
 }
 
 aside {
     grid-area: 2 / 3 / -1 / -1;
     background-color: var(--background-color);
+}
+
+aside > * {
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+}
+
+.announcement-cards p {
+    font-size: 0.7rem;
+    width: 28ch;
+    line-height: normal;
+}
+
+#announcement-container {
+    --margin-size: 1rem 2rem;
+    --border-radius: .5rem;
+    background-color: var(--primary-color);
+    margin-top: .5rem;
+    padding: var(--margin-size);
+    border-radius: var(--border-radius);
+}
+
+.announcement-cards:not(:last-child) {
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.announcement-cards {
+   padding: 1rem 0;
+}
+
+.announcement-cards h5 {
+    font-weight: 500;
 }
